@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yang.mapper.DepartmentMapper">
+
+    <resultMap id="BaseResultMap" type="com.yang.entitys.Department">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="departmentName" jdbcType="VARCHAR" property="departmentName" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        s.id,s.departmentName
+    </sql>
+
+
+    <select id="getList" resultType="com.yang.entitys.Department" >
+        select <include refid="Base_Column_List"/> from ba_department s
+    </select>
+
+</mapper>
+
+
